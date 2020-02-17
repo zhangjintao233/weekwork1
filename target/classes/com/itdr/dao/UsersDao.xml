@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itdr.dao.UsersDao">
+    <resultMap id="users" type="com.itdr.pojo.Users">
+        <id property="id" column="id"></id>
+        <result property="name" column="username"></result>
+        <result property="mim" column="password"></result>
+    </resultMap>
+
+
+
+    <select id="getUser" parameterType="map" resultMap="users">
+        SELECT id,username,password FROM users3 WHERE username=#{param1} AND password=#{param2}
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+    <insert id="addUser" parameterType="com.itdr.pojo.Users">
+        INSERT INTO users3 VALUES(#{id},#{username},#{password})
+    </insert>
+
+    <delete id="deleteUser" parameterType="integer">
+        DELETE FROM users3 WHERE id=#{id}
+    </delete>
+
+    <update id="updateUser" parameterType="com.itdr.pojo.Users">
+        UPDATE users3 SET password=#{password} WHERE id=#{id}
+    </update>
+</mapper>

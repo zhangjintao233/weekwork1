@@ -2,8 +2,9 @@ package com.itdr.pojo;
 
 public class Users {
     private Integer id;
-    private String username;
-    private String password;
+    private String name;
+    private String mim;
+
 
     public Integer getId() {
         return id;
@@ -13,28 +14,28 @@ public class Users {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getMim() {
+        return mim;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setMim(String mim) {
+        this.mim = mim;
     }
 
     @Override
     public String toString() {
         return "Users{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", mim='" + mim + '\'' +
                 '}';
     }
 }
